@@ -1,28 +1,57 @@
-const clothesProducts = [
-    {name: "T-Shirt", price: "$15", img: "https://via.placeholder.com/150?text=T-Shirt"},
-    {name: "Jacket", price: "$35", img: "https://via.placeholder.com/150?text=Jacket"},
-    {name: "Jeans", price: "$25", img: "https://via.placeholder.com/150?text=Jeans"},
-];
-
-const shoesProducts = [
-    {name: "Sneakers", price: "$30", img: "https://via.placeholder.com/150?text=Sneakers"},
-    {name: "Boots", price: "$50", img: "https://via.placeholder.com/150?text=Boots"},
-    {name: "Sandals", price: "$20", img: "https://via.placeholder.com/150?text=Sandals"},
-];
-
-function displayProducts(products, elementId) {
-    const container = document.getElementById(elementId);
-    products.forEach(product => {
-        const div = document.createElement("div");
-        div.className = "product";
-        div.innerHTML = `
-            <img src="${product.img}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p>${product.price}</p>
-        `;
-        container.appendChild(div);
-    });
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
 }
 
-displayProducts(clothesProducts, "clothes-products");
-displayProducts(shoesProducts, "shoes-products");
+header {
+    background-color: #ff6f61;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
